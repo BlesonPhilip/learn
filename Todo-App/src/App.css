@@ -19,14 +19,57 @@
   position: absolute;
   top: 200px;
   width: 100%;
-  z-index: 10;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .bar {
-  width: 40%;
+  width: 50%;
   height: 50px;
   background-color: rgb(244, 244, 244);
-  box-shadow: 0px 0px 10px 10px rgb(229, 229, 229);
+  box-shadow: 0px 0px 10px 5px rgb(215, 215, 215, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.todo-list {
+  width: 40%;
+  margin: 20px auto;
+}
+
+.todo-list-item {
+  margin: 10px;
+  box-shadow: 0px 0px 10px 10px rgba(241, 241, 241, 0.8);
+  padding: 15px 10px;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 10px;
+}
+
+.time-priority {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: grey;
+  margin-top: 5px;
+}
+.b {
+  display: flex;
+  gap: 5px;
+  margin: 5px;
+}
+.editB {
+  background-color: greenyellow;
+  color: rgb(224, 151, 15);
+  cursor: pointer;
+}
+.delB {
+  background-color: rgb(237, 26, 26);
+  color: rgb(255, 251, 244);
+  cursor: pointer;
 }
