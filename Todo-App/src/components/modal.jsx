@@ -1,8 +1,26 @@
 import "./modal.css";
 
-const Modal = ({ show, setShow, onTitleChange }) => {
+const Modal = ({
+  show,
+  setShow,
+  onTitleChange,
+  onDescriptionChange,
+  onTimeChange,
+  onPriorityChange,
+  onAdd,
+  data,
+}) => {
   const onInputChange = (e) => {
     onTitleChange(e.target.value);
+  };
+  const onDesChange = (e) => {
+    onDescriptionChange(e.target.value);
+  };
+  const onTimChange = (e) => {
+    onTimeChange(e.target.value);
+  };
+  const onPriChange = (e) => {
+    onPriorityChange(e.target.value);
   };
 
   return (
@@ -11,17 +29,39 @@ const Modal = ({ show, setShow, onTitleChange }) => {
       <div className="modal-container">
         <div className="model">
           <label>Title</label>
-          <input className="title" type="text" onChange={onInputChange} />
+          <input
+            className="title"
+            type="text"
+            onChange={onInputChange}
+            value={data.title}
+          />
           <label>Description</label>
-          <textarea className="description"></textarea>
+          <textarea
+            className="description"
+            onChange={onDesChange}
+            value={data.description}
+          ></textarea>
 
-          <input type="time" className="time" />
-          <select name="" id="" className="priority">
-            <option value="">Low</option>
-            <option value="">Medium</option>
-            <option value="">High</option>
+          <input
+            type="time"
+            className="time"
+            onChange={onTimChange}
+            value={data.time}
+          />
+          <select
+            name=""
+            id=""
+            className="priority"
+            onChange={onPriChange}
+            value={data.priority}
+          >
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
           </select>
-          <button className="btn">Add</button>
+          <button className="btn" onClick={onAdd}>
+            Add
+          </button>
         </div>
       </div>
     </div>
