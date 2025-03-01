@@ -5,10 +5,24 @@ import { useRef } from "react";
 const App = () => {
   const nameRef = useRef();
   const ageRef = useRef();
+  const placeRef = useRef();
+  const butRef = useRef();
 
   const nameKey = (e) => {
     if (e.key === "Enter") {
       ageRef.current.focus();
+    }
+  };
+
+  const ageKey = (e) => {
+    if (e.key === "Enter") {
+      placeRef.current.focus();
+    }
+  };
+
+  const placeKey = (e) => {
+    if (e.key === "Enter") {
+      butRef.current.focus();
     }
   };
 
@@ -22,13 +36,13 @@ const App = () => {
           </div>
           <div className="input-div">
             <label htmlFor="">Age</label>
-            <input type="number" ref={ageRef} />
+            <input type="number" ref={ageRef} onKeyDown={ageKey} />
           </div>
           <div className="input-div">
             <label htmlFor="">Place</label>
-            <input type="text" name="" id="" />
+            <input type="text" ref={placeRef} onKeyDown={placeKey} />
           </div>
-          <button>Submit</button>
+          <button ref={butRef}>Submit</button>
         </div>
       </div>
     </>
