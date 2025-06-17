@@ -1,4 +1,3 @@
-// app/api/users/[id]/route.js
 import { NextResponse } from "next/server";
 import { users } from "../route"; // ✅ correctly importing users
 
